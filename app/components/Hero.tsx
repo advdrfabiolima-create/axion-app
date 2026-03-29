@@ -1,5 +1,5 @@
 import Link from "next/link";
-import DashboardMockup from "./DashboardMockup";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -106,7 +106,14 @@ export default function Hero() {
                 }}
               />
               <div className="relative">
-                <DashboardMockup />
+                <Image
+                  src="/hero.png"
+                  alt="Axion — plataforma de automação inteligente"
+                  width={720}
+                  height={500}
+                  className="w-full h-auto rounded-xl"
+                  priority
+                />
               </div>
             </div>
           </div>
