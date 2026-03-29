@@ -32,10 +32,10 @@ export default function Hero() {
       />
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="flex items-center">
 
           {/* Left */}
-          <div className="space-y-8 animate-fade-in-left">
+          <div className="space-y-8 animate-fade-in-left w-full max-w-2xl">
 
             {/* Animated badge */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-full border border-[#1E1E28] bg-[#121217]/80 backdrop-blur-sm">
