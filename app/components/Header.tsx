@@ -1,16 +1,25 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+
+const navLinks = [
+  { label: "Soluções", href: "/solucoes" },
+  { label: "Empresa", href: "/empresa" },
+  { label: "Contato", href: "/contato" },
+];
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#0B0B0F]/90 backdrop-blur-sm border-b border-[#1E1E28]">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 shrink-0">
+        <Link href="/" className="flex items-center gap-2 shrink-0">
           <Image
             src="/logo.png"
             alt="Axion Systems"
@@ -19,33 +28,33 @@ export default function Header() {
             className="h-12 w-auto object-contain"
             priority
           />
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {[
-            { label: "Soluções", href: "#solucoes" },
-            { label: "Sobre", href: "#sobre" },
-            { label: "Contato", href: "#contato" },
-          ].map((item) => (
-            <a
+          {navLinks.map((item) => (
+            <Link
               key={item.href}
               href={item.href}
-              className="text-sm text-[#8A8A93] hover:text-white transition-colors duration-200 tracking-wide"
+              className={`text-sm transition-colors duration-200 tracking-wide ${
+                pathname === item.href
+                  ? "text-white"
+                  : "text-[#8A8A93] hover:text-white"
+              }`}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-4">
-          <a
-            href="#contato"
+          <Link
+            href="/contato"
             className="text-sm font-medium px-5 py-2 bg-[#00C853] text-black rounded hover:bg-[#00B84A] transition-colors duration-200"
           >
             Solicitar demonstração
-          </a>
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -75,27 +84,27 @@ export default function Header() {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className="md:hidden bg-[#121217] border-t border-[#1E1E28] px-6 py-6 flex flex-col gap-5">
-          {[
-            { label: "Soluções", href: "#solucoes" },
-            { label: "Sobre", href: "#sobre" },
-            { label: "Contato", href: "#contato" },
-          ].map((item) => (
-            <a
+          {navLinks.map((item) => (
+            <Link
               key={item.href}
               href={item.href}
               onClick={() => setMobileOpen(false)}
-              className="text-sm text-[#8A8A93] hover:text-white transition-colors"
+              className={`text-sm transition-colors ${
+                pathname === item.href
+                  ? "text-white"
+                  : "text-[#8A8A93] hover:text-white"
+              }`}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contato"
+          <Link
+            href="/contato"
             onClick={() => setMobileOpen(false)}
             className="text-sm font-medium px-5 py-2.5 bg-[#00C853] text-black rounded hover:bg-[#00B84A] transition-colors text-center"
           >
             Solicitar demonstração
-          </a>
+          </Link>
         </div>
       )}
     </header>

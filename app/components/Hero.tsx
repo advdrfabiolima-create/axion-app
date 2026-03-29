@@ -1,3 +1,4 @@
+import Link from "next/link";
 import DashboardMockup from "./DashboardMockup";
 
 export default function Hero() {
@@ -15,33 +16,33 @@ export default function Hero() {
             </div>
 
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] tracking-tight text-white">
-              Sistemas inteligentes para negócios que exigem{" "}
-              <span className="text-[#00C853]">precisão</span>
+              Sistemas inteligentes para operações que{" "}
+              <span className="text-[#00C853]">não podem falhar</span>
             </h1>
 
             <p className="text-lg text-[#8A8A93] leading-relaxed max-w-lg">
-              A Axion cria plataformas modernas para automatizar processos,
-              conectar dados e transformar operações complexas em experiências
-              simples, rápidas e escaláveis.
+              A Axion projeta e constrói sistemas que automatizam processos, conectam dados e estruturam operações reais — com clareza, performance e lógica de produto.
             </p>
 
             <div className="flex flex-wrap gap-3">
-              <a
-                href="#contato"
+              <Link
+                href="/contato"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#00C853] text-black font-semibold text-sm rounded hover:bg-[#00B84A] transition-colors duration-200"
               >
                 Solicitar demonstração
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </a>
-              <a
-                href="#solucoes"
+              </Link>
+              <Link
+                href="/contato"
                 className="inline-flex items-center gap-2 px-6 py-3 border border-[#1E1E28] text-[#8A8A93] font-medium text-sm rounded hover:border-[#2E2E38] hover:text-white transition-colors duration-200"
               >
-                Conhecer soluções
-              </a>
+                Falar com a equipe
+              </Link>
             </div>
+
+            <p className="text-xs text-[#55555F]">Sem ferramentas genéricas. Sem improviso. Apenas sistemas pensados para a sua operação.</p>
 
             <div className="flex items-center gap-6 pt-2">
               {[
@@ -55,6 +56,7 @@ export default function Hero() {
                 </div>
               ))}
             </div>
+            <p className="text-xs text-[#55555F]">Sistemas prontos para operar em produção.</p>
           </div>
 
           {/* Right — Dashboard */}

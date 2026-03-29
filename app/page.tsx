@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import TrustSection from "./components/TrustSection";
@@ -7,6 +8,12 @@ import ProductVisual from "./components/ProductVisual";
 import Differentiation from "./components/Differentiation";
 import FinalCTA from "./components/FinalCTA";
 import Footer from "./components/Footer";
+
+export const metadata: Metadata = {
+  title: "Axion Systems | Sistemas inteligentes para negócios que exigem precisão",
+  description:
+    "Projetamos sistemas que automatizam operações, conectam dados e eliminam complexidade — com precisão, performance e lógica de produto.",
+};
 
 export default function Home() {
   return (

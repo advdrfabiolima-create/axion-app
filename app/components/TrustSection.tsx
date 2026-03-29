@@ -13,7 +13,7 @@ export default function TrustSection() {
     <section className="py-16 px-6 border-y border-[#1E1E28]">
       <div className="max-w-7xl mx-auto">
         <p className="text-center text-xs text-[#55555F] uppercase tracking-widest mb-10">
-          Empresas que confiam na Axion
+          Empresas que já operam com sistemas desenvolvidos pela Axion
         </p>
         <div className="flex flex-wrap items-center justify-center gap-10 lg:gap-16">
           {logos.map((logo) => (

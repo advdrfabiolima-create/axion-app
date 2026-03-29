@@ -11,15 +11,14 @@ export default function ProductVisual() {
             <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight">
               Sistemas que pensam como produto, não como código
             </h2>
-            <p className="text-[#8A8A93] leading-relaxed">
-              A Axion projeta cada sistema com visão de produto. Isso significa
-              que a arquitetura técnica e a experiência do usuário evoluem
-              juntas, sem conflito.
+            <p className="text-sm text-[#00C853] font-medium border-l-2 border-[#00C853]/40 pl-4 py-1">
+              A maioria dos sistemas falha porque nasce como projeto. Nós construímos como produto.
             </p>
             <p className="text-[#8A8A93] leading-relaxed">
-              O resultado são plataformas que os times realmente adotam porque
-              fazem sentido — tanto do ponto de vista da engenharia quanto do
-              negócio.
+              A Axion projeta cada sistema com visão de produto — arquitetura técnica e experiência do usuário evoluindo juntas, sem conflito, sem reescritas.
+            </p>
+            <p className="text-[#8A8A93] leading-relaxed">
+              O resultado são plataformas que os times adotam porque fazem sentido operacional e técnico ao mesmo tempo.
             </p>
             <div className="space-y-3 pt-2">
               {[

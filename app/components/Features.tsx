@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const features = [
   {
     icon: (
@@ -10,7 +12,7 @@ const features = [
     ),
     title: "Plataformas sob medida",
     description:
-      "Sistemas desenhados do zero para o contexto do seu negócio. Sem soluções genéricas, sem adaptações forçadas.",
+      "Sistemas concebidos para o contexto real do negócio. Nenhuma adaptação forçada, nenhuma funcionalidade desnecessária.",
   },
   {
     icon: (
@@ -22,7 +24,7 @@ const features = [
     ),
     title: "Dashboards e painéis",
     description:
-      "Visualizações precisas que transformam dados brutos em inteligência operacional acionável.",
+      "Visualizações que transformam dados operacionais em inteligência acionável. Sem ruído, sem ambiguidade.",
   },
   {
     icon: (
@@ -35,7 +37,7 @@ const features = [
     ),
     title: "Automação de processos",
     description:
-      "Fluxos automáticos que eliminam gargalos e garantem execução consistente em qualquer escala.",
+      "Fluxos automatizados que eliminam trabalho repetitivo, reduzem erros e garantem consistência em escala.",
   },
   {
     icon: (
@@ -47,7 +49,7 @@ const features = [
     ),
     title: "Sistemas de matching",
     description:
-      "Algoritmos de correspondência inteligente que conectam entidades, recursos e oportunidades com precisão.",
+      "Algoritmos de correspondência que conectam entidades, recursos e oportunidades com lógica precisa.",
   },
 ];
 
@@ -56,6 +58,9 @@ export default function Features() {
     <section id="solucoes" className="py-24 px-6 bg-[#121217]">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-2xl mb-16">
+          <p className="text-xs text-[#55555F] uppercase tracking-widest mb-2 font-medium">
+            O que construímos na prática
+          </p>
           <p className="text-xs text-[#00C853] uppercase tracking-widest mb-4 font-medium">
             Soluções
           </p>
@@ -80,10 +85,12 @@ export default function Features() {
                 {feature.description}
               </p>
               <div className="flex items-center gap-1 text-[#00C853] text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                Saiba mais
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <Link href="/solucoes" className="flex items-center gap-1">
+                  Saiba mais
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
               </div>
             </div>
           ))}

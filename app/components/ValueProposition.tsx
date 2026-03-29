@@ -7,7 +7,7 @@ const values = [
     ),
     title: "Clareza",
     description:
-      "Interfaces que comunicam o que importa. Cada dado tem seu lugar, cada ação tem seu propósito. Sem ruído, sem ambiguidade.",
+      "Interfaces e fluxos que comunicam o que importa. Cada dado tem seu lugar, cada ação tem propósito.",
   },
   {
     icon: (
@@ -18,7 +18,7 @@ const values = [
     ),
     title: "Eficiência",
     description:
-      "Automação que elimina o trabalho repetitivo e libera as equipes para o que realmente gera valor. Velocidade sem abrir mão da precisão.",
+      "Automação que reduz ruído operacional e libera as equipes para o que realmente gera valor.",
   },
   {
     icon: (
@@ -30,7 +30,7 @@ const values = [
     ),
     title: "Escalabilidade",
     description:
-      "Arquitetura construída para crescer. Do MVP ao enterprise — a plataforma acompanha o ritmo do negócio sem refatorações custosas.",
+      "Arquitetura preparada para crescer com o negócio sem refatorações dolorosas.",
   },
 ];
 
@@ -48,10 +48,13 @@ export default function ValueProposition() {
               Sistemas com lógica de produto.
             </span>
           </h2>
+          <p className="mt-4 text-[#8A8A93] leading-relaxed">
+            Software genérico é fácil de vender e difícil de operar. Construímos sistemas com arquitetura clara, experiência precisa e estrutura que sustenta operações reais.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-px bg-[#1E1E28]">
-          {values.map((item, i) => (
+          {values.map((item) => (
             <div
               key={item.title}
               className="bg-[#0B0B0F] p-8 space-y-4 hover:bg-[#121217] transition-colors duration-200"

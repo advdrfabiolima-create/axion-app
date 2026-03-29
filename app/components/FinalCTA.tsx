@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function FinalCTA() {
   return (
     <section className="py-32 px-6">
@@ -8,31 +10,35 @@ export default function FinalCTA() {
           <div className="h-px flex-1 max-w-24 bg-[#1E1E28]" />
         </div>
 
-        <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
-          Sua operação merece um sistema à altura
-        </h2>
+        <div className="space-y-2">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
+            Sua operação não precisa de mais uma ferramenta
+          </h2>
+          <p className="text-2xl lg:text-3xl font-semibold text-[#8A8A93] leading-tight tracking-tight">
+            Precisa de um sistema estruturado para funcionar
+          </p>
+        </div>
 
         <p className="text-lg text-[#8A8A93] leading-relaxed max-w-xl mx-auto">
-          Empresas que exigem precisão não toleram ferramentas genéricas.
-          Conheça como a Axion pode transformar seus processos.
+          Se você quer parar de adaptar processos a sistemas genéricos, a Axion pode construir a solução certa.
         </p>
 
         <div className="flex flex-wrap gap-3 justify-center pt-2">
-          <a
-            href="#contato"
+          <Link
+            href="/contato"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#00C853] text-black font-semibold text-sm rounded hover:bg-[#00B84A] transition-colors duration-200"
           >
             Agendar conversa
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </a>
-          <a
-            href="#contato"
+          </Link>
+          <Link
+            href="/contato"
             className="inline-flex items-center gap-2 px-7 py-3.5 border border-[#1E1E28] text-[#8A8A93] font-medium text-sm rounded hover:border-[#2E2E38] hover:text-white transition-colors duration-200"
           >
-            Solicitar apresentação
-          </a>
+            Solicitar demonstração
+          </Link>
         </div>
 
         <p className="text-xs text-[#55555F] pt-4">
