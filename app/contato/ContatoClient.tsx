@@ -324,7 +324,7 @@ export default function ContatoClient() {
                       </svg>
                     </div>
                     <p className="text-sm text-[#8A8A93]">
-                      contato@axionsystem.com.br
+                      axionsystem@hotmail.com
                     </p>
                   </div>
                   <div className="flex items-center gap-3">
