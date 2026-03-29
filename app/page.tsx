@@ -5,6 +5,7 @@ import TrustSection from "./components/TrustSection";
 import MetricsSection from "./components/MetricsSection";
 import ValueProposition from "./components/ValueProposition";
 import Features from "./components/Features";
+import HowItWorks from "./components/HowItWorks";
 import TechShowcase from "./components/TechShowcase";
 import ProductVisual from "./components/ProductVisual";
 import TestimonialsSection from "./components/TestimonialsSection";
@@ -27,6 +28,7 @@ export default function Home() {
       <MetricsSection />
       <ValueProposition />
       <Features />
+      <HowItWorks />
       <TechShowcase />
       <ProductVisual />
       <TestimonialsSection />
