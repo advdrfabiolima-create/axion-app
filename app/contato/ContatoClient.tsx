@@ -47,6 +47,7 @@ const inputBase =
 export default function ContatoClient() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     nome: "",
     empresa: "",
@@ -61,13 +62,23 @@ export default function ContatoClient() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    setError("");
+    try {
+      const res = await fetch("/api/contato", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
       setSubmitted(true);
-    }, 1200);
+    } catch {
+      setError("Não foi possível enviar. Tente novamente ou entre em contato pelo WhatsApp.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -249,6 +260,11 @@ export default function ContatoClient() {
                         </>
                       )}
                     </button>
+
+                    {/* Error message */}
+                    {error && (
+                      <p className="text-xs text-red-400 text-center">{error}</p>
+                    )}
 
                     {/* Trust line */}
                     <p className="text-xs text-[#55555F] text-center">
