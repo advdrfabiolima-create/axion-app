@@ -36,8 +36,8 @@ export async function POST(req: NextRequest) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      sender: { name: "Axion Systems — Site", email: "axionsystem@hotmail.com" },
-      to: [{ email: "axionsystem@hotmail.com", name: "Axion Systems" }],
+      sender: { name: "Axion Systems — Site", email: "contato@axionsystem.com.br" },
+      to: [{ email: "contato@axionsystem.com.br", name: "Axion Systems" }],
       replyTo: { email, name: nome },
       subject: `Novo contato: ${nome}${empresa ? ` — ${empresa}` : ""}`,
       htmlContent: html,
