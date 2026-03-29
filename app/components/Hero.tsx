@@ -44,7 +44,7 @@ export default function Hero() {
 
             <p className="text-xs text-[#55555F]">Sem ferramentas genéricas. Sem improviso. Apenas sistemas pensados para a sua operação.</p>
 
-            <div className="flex items-center gap-6 pt-2">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2">
               {[
                 { value: "99.9%", label: "Uptime garantido" },
                 { value: "3x", label: "Mais eficiência" },
@@ -59,8 +59,8 @@ export default function Hero() {
             <p className="text-xs text-[#55555F]">Sistemas prontos para operar em produção.</p>
           </div>
 
-          {/* Right — Dashboard */}
-          <div className="animate-fade-in-right delay-200">
+          {/* Right — Dashboard (hidden on mobile to avoid overflow) */}
+          <div className="hidden lg:block animate-fade-in-right delay-200">
             <DashboardMockup />
           </div>
         </div>

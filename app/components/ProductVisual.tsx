@@ -37,8 +37,8 @@ export default function ProductVisual() {
             </div>
           </div>
 
-          {/* Large dashboard preview */}
-          <div className="order-1 lg:order-2">
+          {/* Large dashboard preview — hidden on mobile to avoid overflow */}
+          <div className="hidden lg:block order-1 lg:order-2">
             <div className="rounded-xl border border-[#1E1E28] bg-[#121217] overflow-hidden">
               {/* Toolbar */}
               <div className="border-b border-[#1E1E28] px-4 py-3 flex items-center gap-3 bg-[#0F0F14]">

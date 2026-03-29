@@ -90,19 +90,37 @@ export default function Header() {
             className="flex flex-col justify-center items-center w-9 h-9 gap-1.5 rounded border border-[#1E1E28] bg-[#121217] hover:border-[#2E2E38] transition-colors duration-200"
           >
             <span
-              className={`block w-4 h-0.5 bg-white transition-all duration-300 origin-center ${
-                mobileOpen ? "rotate-45 translate-y-2" : ""
-              }`}
+              style={{
+                display: "block",
+                width: "16px",
+                height: "2px",
+                backgroundColor: "white",
+                transition: "transform 0.3s ease",
+                transformOrigin: "center",
+                transform: mobileOpen ? "rotate(45deg) translateY(8px)" : "none",
+              }}
             />
             <span
-              className={`block w-4 h-0.5 bg-white transition-all duration-300 ${
-                mobileOpen ? "opacity-0 scale-x-0" : ""
-              }`}
+              style={{
+                display: "block",
+                width: "16px",
+                height: "2px",
+                backgroundColor: "white",
+                transition: "opacity 0.3s ease, transform 0.3s ease",
+                opacity: mobileOpen ? 0 : 1,
+                transform: mobileOpen ? "scaleX(0)" : "none",
+              }}
             />
             <span
-              className={`block w-4 h-0.5 bg-white transition-all duration-300 origin-center ${
-                mobileOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
+              style={{
+                display: "block",
+                width: "16px",
+                height: "2px",
+                backgroundColor: "white",
+                transition: "transform 0.3s ease",
+                transformOrigin: "center",
+                transform: mobileOpen ? "rotate(-45deg) translateY(-8px)" : "none",
+              }}
             />
           </button>
         </div>
@@ -110,9 +128,13 @@ export default function Header() {
 
       {/* Mobile Menu — slide down */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          mobileOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        style={{
+          maxHeight: mobileOpen ? "384px" : "0px",
+          opacity: mobileOpen ? 1 : 0,
+          overflow: "hidden",
+          transition: "max-height 0.3s ease-in-out, opacity 0.3s ease-in-out",
+        }}
+        className="md:hidden"
       >
         <div className="bg-[#0F0F14] border-t border-[#1E1E28] px-4 py-6 flex flex-col gap-1">
           {navLinks.map((item) => (
