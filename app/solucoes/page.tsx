@@ -395,11 +395,11 @@ export default function SolucoesPage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-px bg-[#1E1E28]">
+          <div className="grid md:grid-cols-3 gap-4">
             {processSteps.map((step) => (
               <div
                 key={step.number}
-                className="bg-[#0B0B0F] p-8 space-y-4 hover:bg-[#121217] transition-colors duration-200 group"
+                className="card-glow bg-[#121217] border border-[#1E1E28] rounded-xl p-8 space-y-4 hover:bg-[#0F0F14] transition-colors duration-200 group"
               >
                 <span className="text-xs font-mono text-[#2E2E38] group-hover:text-[#00C853] transition-colors duration-200">
                   {step.number}

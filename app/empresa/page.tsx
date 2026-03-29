@@ -195,11 +195,11 @@ export default function EmpresaPage() {
               <span className="text-[#8A8A93]">não como exceção</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-px bg-[#1E1E28]">
+          <div className="grid md:grid-cols-2 gap-4">
             {filosofiaItems.map((item) => (
               <div
                 key={item.title}
-                className="bg-[#121217] p-8 space-y-4 hover:bg-[#0F0F14] transition-colors duration-200 group"
+                className="card-glow bg-[#121217] border border-[#1E1E28] rounded-xl p-8 space-y-4 hover:bg-[#0F0F14] transition-colors duration-200 group"
               >
                 <div className="w-10 h-10 rounded-lg border border-[#1E1E28] bg-[#0B0B0F] flex items-center justify-center group-hover:border-[#00C853]/20 transition-colors duration-200">
                   {item.icon}
@@ -272,11 +272,11 @@ export default function EmpresaPage() {
               Contextos diferentes, mesma exigência de precisão.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-px bg-[#1E1E28]">
+          <div className="grid md:grid-cols-3 gap-4">
             {setoresItems.map((setor) => (
               <div
                 key={setor.label}
-                className="bg-[#121217] p-8 space-y-5 hover:bg-[#0F0F14] transition-colors duration-200 group"
+                className="card-glow bg-[#121217] border border-[#1E1E28] rounded-xl p-8 space-y-5 hover:bg-[#0F0F14] transition-colors duration-200 group"
               >
                 <div className="w-10 h-10 rounded-lg border border-[#1E1E28] bg-[#0B0B0F] flex items-center justify-center group-hover:border-[#00C853]/20 transition-colors duration-200">
                   {setor.icon}
