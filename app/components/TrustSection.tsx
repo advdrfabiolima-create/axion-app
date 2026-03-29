@@ -22,7 +22,7 @@ export default function TrustSection() {
               href={logo.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center opacity-50 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+              className="flex items-center justify-center opacity-100 md:opacity-50 md:hover:opacity-100 transition-all duration-300 md:grayscale md:hover:grayscale-0"
             >
               <Image
                 src={logo.src}
