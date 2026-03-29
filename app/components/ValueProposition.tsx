@@ -53,11 +53,11 @@ export default function ValueProposition() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-[#1E1E28]">
+        <div className="grid md:grid-cols-3 gap-4">
           {values.map((item) => (
             <div
               key={item.title}
-              className="bg-[#0B0B0F] p-8 space-y-4 hover:bg-[#121217] transition-colors duration-200"
+              className="card-glow bg-[#121217] border border-[#1E1E28] rounded-xl p-8 space-y-4 hover:bg-[#0F0F14] transition-colors duration-200"
             >
               <div className="w-10 h-10 rounded-lg border border-[#1E1E28] bg-[#121217] flex items-center justify-center">
                 {item.icon}

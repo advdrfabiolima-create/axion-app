@@ -55,11 +55,11 @@ export default function Differentiation() {
           </div>
 
           {/* Right — list */}
-          <div className="space-y-px">
+          <div className="space-y-3">
             {points.map((point) => (
               <div
                 key={point.number}
-                className="group flex gap-6 p-6 bg-[#121217] hover:bg-[#0F0F14] border border-[#1E1E28] transition-colors duration-200"
+                className="card-glow group flex gap-6 p-6 bg-[#121217] hover:bg-[#0F0F14] border border-[#1E1E28] rounded-xl transition-colors duration-200"
               >
                 <span className="text-xs font-mono text-[#2E2E38] group-hover:text-[#00C853] transition-colors duration-200 shrink-0 pt-0.5">
                   {point.number}

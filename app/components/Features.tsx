@@ -69,11 +69,11 @@ export default function Features() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#1E1E28]">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="bg-[#121217] p-7 space-y-4 hover:bg-[#0F0F14] transition-colors duration-200 group"
+              className="card-glow bg-[#121217] border border-[#1E1E28] rounded-xl p-7 space-y-4 hover:bg-[#0F0F14] transition-colors duration-200 group"
             >
               <div className="w-10 h-10 rounded-lg border border-[#1E1E28] bg-[#0B0B0F] flex items-center justify-center group-hover:border-[#00C853]/20 transition-colors duration-200">
                 {feature.icon}
