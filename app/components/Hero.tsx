@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-28 px-6 overflow-hidden">
+    <section className="relative pt-36 pb-32 px-6 overflow-hidden">
 
-      {/* Background image */}
+      {/* Background image — abstract green tech network */}
       <Image
         src="/hero.png"
         alt=""
@@ -15,29 +15,39 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Dark overlay so o texto fica legível */}
+      {/* Base dark overlay — reduces overall image intensity */}
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-[#0B0B0F]/50"
       />
 
-      {/* Radial glow — green, behind headline */}
+      {/* Left-side gradient — ensures perfect text readability */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 30% 50%, rgba(0,200,83,0.07) 0%, transparent 70%)",
+            "linear-gradient(to right, rgba(11,11,15,1) 45%, rgba(11,11,15,0.85) 60%, rgba(11,11,15,0.6) 70%, rgba(11,11,15,0) 85%)",
+        }}
+      />
+
+      {/* Subtle green ambient glow — left side, low intensity */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 50% 45% at 18% 55%, rgba(0,200,83,0.045) 0%, transparent 70%)",
         }}
       />
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="flex items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left */}
-          <div className="space-y-8 animate-fade-in-left w-full max-w-2xl">
+          {/* Left — Content */}
+          <div className="space-y-10 animate-fade-in-left">
 
-            {/* Animated badge */}
+            {/* Badge */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-full border border-[#1E1E28] bg-[#121217]/80 backdrop-blur-sm">
               <span className="relative flex w-2 h-2">
                 <span className="animate-badge-pulse absolute inline-flex w-full h-full rounded-full bg-[#00C853] opacity-60" />
@@ -54,16 +64,16 @@ export default function Hero() {
               <span className="text-gradient">não podem falhar</span>
             </h1>
 
-            <p className="text-lg text-[#8A8A93] leading-relaxed max-w-lg">
-              A Axion projeta e constrói sistemas que automatizam processos,
-              conectam dados e estruturam operações reais — com clareza,
-              performance e lógica de produto.
+            {/* Paragraph */}
+            <p className="text-lg text-white/70 leading-relaxed max-w-[520px]">
+              Transformamos operações complexas em sistemas automatizados, previsíveis e escaláveis.
             </p>
 
-            <div className="flex flex-wrap gap-3">
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-4">
               <Link
                 href="/contato"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#00C853] text-black font-semibold text-sm rounded hover:bg-[#00B84A] transition-colors duration-200 shadow-[0_0_20px_rgba(0,200,83,0.25)]"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#00C853] text-black font-semibold text-sm rounded hover:bg-[#00B84A] transition-all duration-200 shadow-[0_0_20px_rgba(0,200,83,0.25)] hover:shadow-[0_0_36px_rgba(0,200,83,0.45)]"
               >
                 Solicitar demonstração
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -72,24 +82,24 @@ export default function Hero() {
               </Link>
               <Link
                 href="/contato"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[#1E1E28] text-[#8A8A93] font-medium text-sm rounded hover:border-[#2E2E38] hover:text-white transition-colors duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-[#2E2E38] text-[#8A8A93] font-medium text-sm rounded hover:border-[#3E3E48] hover:text-white hover:bg-white/[0.04] transition-all duration-200"
               >
-                Falar com a equipe
+                Ver como funciona
               </Link>
             </div>
 
-            <p className="text-xs text-[#55555F]">
+            <p className="text-xs text-[#3A3A46]">
               Sem ferramentas genéricas. Sem improviso. Apenas sistemas pensados para a sua operação.
             </p>
 
-            {/* Stats row */}
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 pt-2">
+            {/* Stats */}
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 pt-4 border-t border-[#18181F]">
               {[
                 { value: "99.9%", label: "Uptime garantido" },
                 { value: "3x", label: "Mais eficiência" },
                 { value: "< 48h", label: "Ativação em produção" },
               ].map((stat, i) => (
-                <div key={stat.label} className="flex items-center gap-4">
+                <div key={stat.label} className="flex items-center gap-4 pt-2">
                   {i > 0 && <div className="w-px h-8 bg-[#1E1E28]" />}
                   <div className="space-y-0.5">
                     <p className="text-xl font-bold text-white tracking-tight">{stat.value}</p>
@@ -106,7 +116,7 @@ export default function Hero() {
       {/* Bottom fade to next section */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-0 right-0 h-24"
+        className="pointer-events-none absolute bottom-0 left-0 right-0 h-28"
         style={{
           background: "linear-gradient(to bottom, transparent, #0B0B0F)",
         }}
