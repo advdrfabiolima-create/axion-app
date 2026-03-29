@@ -1,0 +1,12 @@
+{"timestamp":"00:00:01.533","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:05.937","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:17.518","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:01:33.855","source":"Server","level":"LOG","message":"✓ Compiled in 87ms"}
+{"timestamp":"00:07:37.729","source":"Server","level":"LOG","message":"✓ Compiled in 468ms"}
+{"timestamp":"00:08:57.823","source":"Server","level":"LOG","message":"✓ Compiled in 50ms"}
+{"timestamp":"00:11:50.956","source":"Server","level":"LOG","message":"✓ Compiled in 41ms"}
+{"timestamp":"00:12:08.932","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:51:27.150","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"01:01:23.174","source":"Server","level":"LOG","message":"✓ Compiled in 838ms"}
+{"timestamp":"01:01:23.210","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"01:01:25.320","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
