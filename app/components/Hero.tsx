@@ -3,7 +3,23 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-28 px-6 dot-grid overflow-hidden">
+    <section className="relative pt-32 pb-28 px-6 overflow-hidden">
+
+      {/* Background image */}
+      <Image
+        src="/hero.png"
+        alt=""
+        fill
+        className="object-cover object-center"
+        priority
+        aria-hidden="true"
+      />
+
+      {/* Dark overlay so o texto fica legível */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[#0B0B0F]/70"
+      />
 
       {/* Radial glow — green, behind headline */}
       <div
@@ -12,16 +28,6 @@ export default function Hero() {
         style={{
           background:
             "radial-gradient(ellipse 60% 50% at 30% 50%, rgba(0,200,83,0.07) 0%, transparent 70%)",
-        }}
-      />
-
-      {/* Top-right subtle glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 40% 40% at 80% 20%, rgba(0,200,83,0.04) 0%, transparent 70%)",
         }}
       />
 
@@ -91,30 +97,6 @@ export default function Hero() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Right — Dashboard (hidden on mobile) */}
-          <div className="hidden lg:block animate-fade-in-right delay-200">
-            <div className="relative">
-              {/* Glow behind mockup */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 -m-8"
-                style={{
-                  background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,200,83,0.06) 0%, transparent 70%)",
-                }}
-              />
-              <div className="relative">
-                <Image
-                  src="/hero.png"
-                  alt="Axion — plataforma de automação inteligente"
-                  width={720}
-                  height={500}
-                  className="w-full h-auto rounded-xl"
-                  priority
-                />
-              </div>
             </div>
           </div>
 
