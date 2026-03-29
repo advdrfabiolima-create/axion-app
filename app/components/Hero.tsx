@@ -18,7 +18,7 @@ export default function Hero() {
       {/* Dark overlay so o texto fica legível */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[#0B0B0F]/70"
+        className="absolute inset-0 bg-[#0B0B0F]/50"
       />
 
       {/* Radial glow — green, behind headline */}
