@@ -39,8 +39,8 @@ export default function Footer() {
               Sistemas projetados com precisão, construídos para escalar.
             </p>
             <div className="space-y-1.5 pt-2">
-              <p className="text-xs text-[#55555F]">contato@axionsystems.com.br</p>
-              <p className="text-xs text-[#55555F]">+55 (11) 99999-0000</p>
+              <p className="text-xs text-[#55555F]">contato@axionsystem.com.br</p>
+              <p className="text-xs text-[#55555F]">(75) 99189-5948</p>
             </div>
           </div>
 

@@ -183,7 +183,7 @@ export default function ContatoClient() {
                         name="whatsapp"
                         type="tel"
                         autoComplete="tel"
-                        placeholder="+55 (11) 99999-0000"
+                        placeholder="(75) 99189-5948"
                         value={form.whatsapp}
                         onChange={handleChange}
                         className={inputBase}
@@ -308,7 +308,7 @@ export default function ContatoClient() {
                       </svg>
                     </div>
                     <p className="text-sm text-[#8A8A93]">
-                      contato@axionsystems.com.br
+                      contato@axionsystem.com.br
                     </p>
                   </div>
                   <div className="flex items-center gap-3">
@@ -323,7 +323,7 @@ export default function ContatoClient() {
                         />
                       </svg>
                     </div>
-                    <p className="text-sm text-[#8A8A93]">+55 (11) 99999-0000</p>
+                    <p className="text-sm text-[#8A8A93]">(75) 99189-5948</p>
                   </div>
                 </div>
               </div>
