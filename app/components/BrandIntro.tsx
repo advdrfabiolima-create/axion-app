@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 // Intro logo dimensions — significantly larger than navbar
-const LOGO_W = 240;
+const LOGO_W = 300;
 const LOGO_H = Math.round(LOGO_W * (52 / 200)); // ≈ 62px  (preserves source aspect ratio)
 
 type MoveTarget = { x: number; y: number; scale: number };
@@ -34,10 +34,10 @@ export default function BrandIntro({ onComplete }: { onComplete: () => void }) {
         // fallback: move up and scale if element not found
         setTarget({ x: 0, y: -(window.innerHeight / 2 - 32), scale: 0.28 });
       }
-    }, 1050);
+    }, 2050);
 
     // Phase 3 — signal parent to unmount (triggers AnimatePresence exit)
-    const t3 = setTimeout(onComplete, 1500);
+    const t3 = setTimeout(onComplete, 2500);
 
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, [onComplete]);
