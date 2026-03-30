@@ -7,15 +7,14 @@ import {
   useEffect,
   useCallback,
 } from "react";
-import { LayoutGroup, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import BrandIntro from "./BrandIntro";
 
-// ── Context ─────────────────────────────────────────────────────────────────
+// ── Context ──────────────────────────────────────────────────────────────────
 
 interface IntroCtx {
   introComplete: boolean;
 }
-
 export const IntroContext = createContext<IntroCtx>({ introComplete: true });
 export const useIntro = () => useContext(IntroContext);
 
@@ -32,7 +31,7 @@ export default function BrandIntroWrapper({
   const [introComplete, setIntroComplete] = useState(false);
 
   useEffect(() => {
-    // Skip intro if user prefers reduced motion
+    // Respect prefers-reduced-motion
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setIntroComplete(true);
       return;
@@ -42,27 +41,28 @@ export default function BrandIntroWrapper({
       sessionStorage.setItem(SESSION_KEY, "1");
       setShowIntro(true);
     } else {
-      // Return visit — no intro, reveal immediately
+      // Return visit — skip intro, reveal hero immediately
       setIntroComplete(true);
     }
   }, []);
 
+  // Called when BrandIntro signals it's ready to be removed (~1500ms in)
   const handleComplete = useCallback(() => {
-    setShowIntro(false);
-    // Wait for exit animation (0.65s) before signalling complete to hero
-    setTimeout(() => setIntroComplete(true), 700);
+    setShowIntro(false); // AnimatePresence triggers 600ms exit on BrandIntro
+
+    // Start hero reveal partway through the overlay exit so content appears
+    // as the overlay is fading — creates a seamless, layered reveal
+    setTimeout(() => setIntroComplete(true), 200);
   }, []);
 
   return (
     <IntroContext.Provider value={{ introComplete }}>
-      <LayoutGroup id="axion-brand">
-        <AnimatePresence>
-          {showIntro && (
-            <BrandIntro key="brand-intro" onComplete={handleComplete} />
-          )}
-        </AnimatePresence>
-        {children}
-      </LayoutGroup>
+      <AnimatePresence>
+        {showIntro && (
+          <BrandIntro key="brand-intro" onComplete={handleComplete} />
+        )}
+      </AnimatePresence>
+      {children}
     </IntroContext.Provider>
   );
 }

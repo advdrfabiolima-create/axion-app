@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -40,10 +39,8 @@ export default function Header() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
-          <motion.div
-            layoutId="axion-logo"
-            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          >
+          {/* data-nav-logo: used by BrandIntro to measure exact position for the landing transition */}
+          <div data-nav-logo>
             <Image
               src="/logo.png"
               alt="Axion Systems"
@@ -52,7 +49,7 @@ export default function Header() {
               className="h-8 md:h-10 w-auto object-contain"
               priority
             />
-          </motion.div>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
