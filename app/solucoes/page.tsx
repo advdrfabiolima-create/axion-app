@@ -374,7 +374,7 @@ export default function SolucoesPage() {
 
               {/* Visual side */}
               <div className={index % 2 !== 0 ? "lg:order-1" : ""}>
-                <div className="rounded-xl border border-[#1E1E28] bg-[#0F0F14] p-8 min-h-[320px] flex flex-col justify-center">
+                <div className="rounded-xl border border-[#1E1E28] bg-[#0F0F14] p-8 min-h-[320px] flex flex-col justify-center shadow-[0_0_40px_rgba(0,200,83,0.07),_0_0_80px_rgba(0,200,83,0.04)] hover:shadow-[0_0_60px_rgba(0,200,83,0.12),_0_0_120px_rgba(0,200,83,0.06)] hover:border-[#00C853]/20 transition-all duration-500">
                   {solucao.visual}
                 </div>
               </div>
