@@ -26,7 +26,7 @@ export default function Hero() {
 
       {/* Background image */}
       <Image
-        src="/hero.png"
+        src="/hero1.png"
         alt=""
         fill
         className="object-cover object-center"
