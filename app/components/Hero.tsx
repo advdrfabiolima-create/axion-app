@@ -34,8 +34,15 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Base dark overlay */}
-      <div aria-hidden="true" className="absolute inset-0 bg-[#0B0B0F]/50" />
+      {/* Base dark overlay — slightly less opaque on the right to preserve hexagonal depth */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to right, rgba(11,11,15,0.52) 0%, rgba(11,11,15,0.50) 44%, rgba(11,11,15,0.41) 100%)",
+        }}
+      />
 
       {/* Left-side gradient */}
       <div
@@ -47,13 +54,33 @@ export default function Hero() {
         }}
       />
 
-      {/* Subtle green ambient glow */}
+      {/* Subtle green ambient glow — left */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           background:
             "radial-gradient(ellipse 50% 45% at 18% 55%, rgba(0,200,83,0.045) 0%, transparent 70%)",
+        }}
+      />
+
+      {/* Soft focal light — right center, adds perceived depth without brightness */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 52% 68% at 67% 48%, rgba(255,255,255,0.032) 0%, transparent 65%)",
+        }}
+      />
+
+      {/* Green atmospheric depth — right side only */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(circle at 70% 40%, rgba(0,200,83,0.09) 0%, transparent 60%)",
         }}
       />
 
