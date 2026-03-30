@@ -81,7 +81,7 @@ export default function Hero() {
                 </svg>
               </Link>
               <Link
-                href="/contato"
+                href="/como-funciona"
                 className="inline-flex items-center gap-2 px-6 py-3 border border-[#2E2E38] text-[#8A8A93] font-medium text-sm rounded hover:border-[#3E3E48] hover:text-white hover:bg-white/[0.04] transition-all duration-200"
               >
                 Ver como funciona
