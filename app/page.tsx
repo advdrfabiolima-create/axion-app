@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BrandIntroWrapper from "./components/BrandIntroWrapper";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import TrustSection from "./components/TrustSection";
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
+    <BrandIntroWrapper>
     <main className="bg-[#0B0B0F] min-h-screen">
       <Header />
       <Hero />
@@ -34,5 +36,6 @@ export default function Home() {
       <FinalCTA />
       <Footer />
     </main>
+    </BrandIntroWrapper>
   );
 }

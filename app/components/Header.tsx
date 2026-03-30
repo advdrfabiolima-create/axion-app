@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -39,14 +40,19 @@ export default function Header() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
-          <Image
-            src="/logo.png"
-            alt="Axion Systems"
-            width={200}
-            height={52}
-            className="h-8 md:h-10 w-auto object-contain"
-            priority
-          />
+          <motion.div
+            layoutId="axion-logo"
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Image
+              src="/logo.png"
+              alt="Axion Systems"
+              width={200}
+              height={52}
+              className="h-8 md:h-10 w-auto object-contain"
+              priority
+            />
+          </motion.div>
         </Link>
 
         {/* Desktop Nav */}

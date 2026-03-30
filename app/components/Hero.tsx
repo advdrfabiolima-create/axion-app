@@ -1,11 +1,29 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useIntro } from "./BrandIntroWrapper";
+
+const item = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const transition = (delay: number) => ({
+  duration: 0.55,
+  ease: [0.22, 1, 0.36, 1] as const,
+  delay,
+});
 
 export default function Hero() {
+  const { introComplete } = useIntro();
+  const animate = introComplete ? "visible" : "hidden";
+
   return (
     <section className="relative pt-36 pb-32 px-6 overflow-hidden">
 
-      {/* Background image — abstract green tech network */}
+      {/* Background image */}
       <Image
         src="/hero.png"
         alt=""
@@ -15,13 +33,10 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Base dark overlay — reduces overall image intensity */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[#0B0B0F]/50"
-      />
+      {/* Base dark overlay */}
+      <div aria-hidden="true" className="absolute inset-0 bg-[#0B0B0F]/50" />
 
-      {/* Left-side gradient — ensures perfect text readability */}
+      {/* Left-side gradient */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -31,7 +46,7 @@ export default function Hero() {
         }}
       />
 
-      {/* Subtle green ambient glow — left side, low intensity */}
+      {/* Subtle green ambient glow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -45,10 +60,16 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Left — Content */}
-          <div className="space-y-10 animate-fade-in-left">
+          <div className="space-y-10">
 
             {/* Badge */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-full border border-[#1E1E28] bg-[#121217]/80 backdrop-blur-sm">
+            <motion.div
+              variants={item}
+              initial="hidden"
+              animate={animate}
+              transition={transition(0)}
+              className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-full border border-[#1E1E28] bg-[#121217]/80 backdrop-blur-sm"
+            >
               <span className="relative flex w-2 h-2">
                 <span className="animate-badge-pulse absolute inline-flex w-full h-full rounded-full bg-[#00C853] opacity-60" />
                 <span className="relative inline-flex w-2 h-2 rounded-full bg-[#00C853]" />
@@ -56,21 +77,39 @@ export default function Hero() {
               <span className="text-xs text-[#8A8A93] tracking-wide">
                 Plataforma de automação inteligente
               </span>
-            </div>
+            </motion.div>
 
             {/* Headline */}
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.08] tracking-tight">
+            <motion.h1
+              variants={item}
+              initial="hidden"
+              animate={animate}
+              transition={transition(0.08)}
+              className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.08] tracking-tight"
+            >
               <span className="text-white">Sistemas inteligentes para operações que{" "}</span>
               <span className="text-gradient">não podem falhar</span>
-            </h1>
+            </motion.h1>
 
             {/* Paragraph */}
-            <p className="text-lg text-white/70 leading-relaxed max-w-[520px]">
+            <motion.p
+              variants={item}
+              initial="hidden"
+              animate={animate}
+              transition={transition(0.16)}
+              className="text-lg text-white/70 leading-relaxed max-w-[520px]"
+            >
               Transformamos operações complexas em sistemas automatizados, previsíveis e escaláveis.
-            </p>
+            </motion.p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-4">
+            <motion.div
+              variants={item}
+              initial="hidden"
+              animate={animate}
+              transition={transition(0.24)}
+              className="flex flex-wrap gap-4"
+            >
               <Link
                 href="/contato"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#00C853] text-black font-semibold text-sm rounded hover:bg-[#00B84A] transition-all duration-200 shadow-[0_0_20px_rgba(0,200,83,0.25)] hover:shadow-[0_0_36px_rgba(0,200,83,0.45)]"
@@ -86,14 +125,27 @@ export default function Hero() {
               >
                 Ver como funciona
               </Link>
-            </div>
+            </motion.div>
 
-            <p className="text-xs text-[#3A3A46]">
+            {/* Micro text */}
+            <motion.p
+              variants={item}
+              initial="hidden"
+              animate={animate}
+              transition={transition(0.3)}
+              className="text-xs text-[#3A3A46]"
+            >
               Sem ferramentas genéricas. Sem improviso. Apenas sistemas pensados para a sua operação.
-            </p>
+            </motion.p>
 
             {/* Stats */}
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 pt-4 border-t border-[#18181F]">
+            <motion.div
+              variants={item}
+              initial="hidden"
+              animate={animate}
+              transition={transition(0.38)}
+              className="flex flex-wrap items-center gap-x-8 gap-y-4 pt-4 border-t border-[#18181F]"
+            >
               {[
                 { value: "99.9%", label: "Uptime garantido" },
                 { value: "3x", label: "Mais eficiência" },
@@ -107,9 +159,9 @@ export default function Hero() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
+            </motion.div>
 
+          </div>
         </div>
       </div>
 
@@ -117,9 +169,7 @@ export default function Hero() {
       <div
         aria-hidden="true"
         className="pointer-events-none absolute bottom-0 left-0 right-0 h-28"
-        style={{
-          background: "linear-gradient(to bottom, transparent, #0B0B0F)",
-        }}
+        style={{ background: "linear-gradient(to bottom, transparent, #0B0B0F)" }}
       />
     </section>
   );
