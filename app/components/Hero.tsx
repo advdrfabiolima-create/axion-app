@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useIntro } from "./BrandIntroWrapper";
+import HeroCanvas from "./HeroCanvas";
 
 const item = {
   hidden: { opacity: 0, y: 10 },
@@ -56,7 +57,10 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto">
+      {/* Animated canvas — particles + breathing glow + mouse parallax */}
+      <HeroCanvas />
+
+      <div className="relative max-w-7xl mx-auto" style={{ zIndex: 3 }}>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Left — Content */}
