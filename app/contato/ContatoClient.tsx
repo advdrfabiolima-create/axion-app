@@ -62,6 +62,14 @@ export default function ContatoClient() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const handleWhatsappChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let v = e.target.value.replace(/\D/g, "").slice(0, 11);
+    if (v.length > 6) v = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7)}`;
+    else if (v.length > 2) v = `(${v.slice(0, 2)}) ${v.slice(2)}`;
+    else if (v.length > 0) v = `(${v}`;
+    setForm({ ...form, whatsapp: v });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -194,9 +202,9 @@ export default function ContatoClient() {
                         name="whatsapp"
                         type="tel"
                         autoComplete="tel"
-                        placeholder="(75) 99189-5948"
+                        placeholder="(00) 00000-0000"
                         value={form.whatsapp}
-                        onChange={handleChange}
+                        onChange={handleWhatsappChange}
                         className={inputBase}
                       />
                     </InputField>
@@ -208,7 +216,7 @@ export default function ContatoClient() {
                       name="mensagem"
                       required
                       rows={6}
-                      placeholder='Ex: "Preciso automatizar o processo de captação e distribuição de leads entre corretores"'
+                      placeholder="Descreva a sua necessidade aqui"
                       value={form.mensagem}
                       onChange={handleChange}
                       className={`${inputBase} resize-none`}
