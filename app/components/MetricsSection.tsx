@@ -30,7 +30,7 @@ export default function MetricsSection() {
                 {m.value}
               </p>
               <p className="text-sm font-medium text-[#8A8A93]">{m.label}</p>
-              <p className="text-xs text-[#55555F] leading-snug">{m.sub}</p>
+              <p className="text-xs text-[#6B6B78] leading-snug">{m.sub}</p>
             </div>
           ))}
         </div>

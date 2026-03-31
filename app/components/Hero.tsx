@@ -164,7 +164,7 @@ export default function Hero() {
               initial="hidden"
               animate={animate}
               transition={transition(0.3)}
-              className="text-xs text-[#3A3A46]"
+              className="text-xs text-[#55555F]"
             >
               Sem ferramentas genéricas. Sem improviso. Apenas sistemas pensados para a sua operação.
             </motion.p>

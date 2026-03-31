@@ -126,7 +126,7 @@ export default function Features() {
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-6">
             Sistemas projetados para operações reais
           </h2>
-          <p className="text-lg text-white/55 leading-relaxed max-w-2xl">
+          <p className="text-lg text-white/65 leading-relaxed max-w-2xl">
             Da automação de fluxos à estruturação de plataformas sob medida, a Axion desenvolve
             sistemas que organizam, conectam e aceleram operações com lógica de produto e visão de escala.
           </p>
@@ -190,7 +190,7 @@ export default function Features() {
 
         {/* Bottom CTA */}
         <div className="mt-20 pt-12 border-t border-[#16161E] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <p className="text-white/60 text-base max-w-md leading-relaxed">
+          <p className="text-white/70 text-base max-w-md leading-relaxed">
             Precisa de uma solução pensada para a sua operação?
           </p>
           <Link

@@ -39,8 +39,8 @@ export default function Footer() {
               Sistemas projetados com precisão, construídos para escalar.
             </p>
             <div className="space-y-1.5 pt-2">
-              <p className="text-xs text-[#55555F]">contato@axionsystem.com.br</p>
-              <p className="text-xs text-[#55555F]">(75) 99189-5948</p>
+              <p className="text-xs text-[#6B6B78]">contato@axionsystem.com.br</p>
+              <p className="text-xs text-[#6B6B78]">(75) 99189-5948</p>
             </div>
           </div>
 
@@ -103,10 +103,10 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 pt-6 border-t border-[#1E1E28] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-[#55555F]">
+          <p className="text-xs text-[#6B6B78]">
             © {new Date().getFullYear()} Axion Systems. Todos os direitos reservados.
           </p>
-          <div className="flex items-center gap-1 text-xs text-[#55555F]">
+          <div className="flex items-center gap-1 text-xs text-[#6B6B78]">
             Construído com
             <span className="text-[#00C853] mx-1">precisão</span>
             para operar em produção.

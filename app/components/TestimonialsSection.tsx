@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-6">
             Sistemas aplicados a operações reais
           </h2>
-          <p className="text-lg text-white/55 leading-relaxed max-w-2xl">
+          <p className="text-lg text-white/65 leading-relaxed max-w-2xl">
             A Axion desenvolve soluções orientadas por contexto, processo e resultado — com foco em
             operações que exigem clareza, controle e escalabilidade.
           </p>
@@ -82,14 +82,14 @@ export default function TestimonialsSection() {
                 <div className="h-px w-full bg-[#16161E]" />
 
                 {/* Description */}
-                <p className="text-sm text-[#52525F] leading-relaxed flex-1 group-hover:text-[#606070] transition-colors duration-200">
+                <p className="text-sm text-[#6A6A75] leading-relaxed flex-1 group-hover:text-[#7A7A88] transition-colors duration-200">
                   {c.description}
                 </p>
 
                 {/* Outcome */}
                 <div className="flex items-start gap-2.5 pt-1">
                   <div className="mt-[5px] w-1.5 h-1.5 rounded-full bg-[#00C853]/50 shrink-0 group-hover:bg-[#00C853] transition-colors duration-300" />
-                  <p className="text-sm text-white/65 leading-relaxed group-hover:text-white/80 transition-colors duration-200">
+                  <p className="text-sm text-white/75 leading-relaxed group-hover:text-white/90 transition-colors duration-200">
                     {c.outcome}
                   </p>
                 </div>
@@ -99,7 +99,7 @@ export default function TestimonialsSection() {
                   <span className="text-xl font-bold text-white tracking-tight">
                     {c.metric.value}
                   </span>
-                  <span className="text-xs text-[#3E3E50]">{c.metric.label}</span>
+                  <span className="text-xs text-[#58585F]">{c.metric.label}</span>
                 </div>
 
               </div>
@@ -116,7 +116,7 @@ export default function TestimonialsSection() {
               )}
               <div className="flex items-center gap-2">
                 <div className="w-1 h-1 rounded-full bg-[#00C853]/40" />
-                <span className="text-xs text-[#3A3A48] tracking-wide">{item}</span>
+                <span className="text-xs text-[#55555F] tracking-wide">{item}</span>
               </div>
             </div>
           ))}
@@ -124,7 +124,7 @@ export default function TestimonialsSection() {
 
         {/* CTA strip */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-10 border-t border-[#13131A]">
-          <p className="text-white/55 text-base leading-relaxed max-w-md">
+          <p className="text-white/70 text-base leading-relaxed max-w-md">
             Vamos estruturar a operação certa para o seu negócio.
           </p>
           <Link

@@ -42,7 +42,7 @@ export default function HowItWorks() {
             <br className="hidden sm:block" />
             com método e clareza
           </h2>
-          <p className="text-lg text-white/55 leading-relaxed max-w-2xl">
+          <p className="text-lg text-white/65 leading-relaxed max-w-2xl">
             Cada sistema é desenvolvido com base na realidade da operação, com etapas
             bem definidas, validação contínua e foco em entrega funcional.
           </p>
@@ -90,7 +90,7 @@ export default function HowItWorks() {
                   <h3 className="text-sm font-semibold text-white/85 leading-snug group-hover:text-white transition-colors duration-300">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-[#52525F] leading-relaxed group-hover:text-[#666674] transition-colors duration-300">
+                  <p className="text-sm text-[#6A6A75] leading-relaxed group-hover:text-[#7A7A85] transition-colors duration-300">
                     {step.description}
                   </p>
                 </div>
@@ -128,7 +128,7 @@ export default function HowItWorks() {
                 <h3 className="text-base font-semibold text-white/90 leading-snug">
                   {step.title}
                 </h3>
-                <p className="text-sm text-[#52525F] leading-relaxed max-w-sm">
+                <p className="text-sm text-[#6A6A75] leading-relaxed max-w-sm">
                   {step.description}
                 </p>
               </div>
@@ -137,7 +137,7 @@ export default function HowItWorks() {
         </div>
 
         {/* Reassurance line */}
-        <p className="mt-20 text-xs text-[#28283A] text-center tracking-wide max-w-md mx-auto">
+        <p className="mt-20 text-xs text-[#42424E] text-center tracking-wide max-w-md mx-auto">
           Processo estruturado, com foco em entrega real — não em complexidade.
         </p>
 
