@@ -34,13 +34,15 @@ export default function HowItWorks() {
       className="relative py-32 px-6 border-t border-[#163324] overflow-hidden"
       style={{ background: "#060E08" }}
     >
-      {/* Green radial glow */}
+      {/* Honeycomb pattern */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 hex-grid" />
+      {/* Green radial glow — fades hex toward center */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 60% 140% at 50% 30%, rgba(0,200,83,0.08) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 160% at 50% 30%, rgba(6,14,8,0.88) 0%, transparent 75%)",
         }}
       />
       <div className="relative max-w-7xl mx-auto">
