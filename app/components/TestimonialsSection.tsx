@@ -45,13 +45,13 @@ export default function TestimonialsSection() {
     >
       {/* Honeycomb pattern */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 hex-grid" />
-      {/* Green radial glow — fades hex toward center */}
+      {/* Dark fade — dims hex toward center */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 70% 130% at 50% 20%, rgba(6,14,8,0.88) 0%, transparent 70%)",
+            "radial-gradient(ellipse 80% 70% at 50% 30%, rgba(6,14,8,0.96) 0%, rgba(6,14,8,0.6) 60%, transparent 100%)",
         }}
       />
       <div className="relative max-w-7xl mx-auto">

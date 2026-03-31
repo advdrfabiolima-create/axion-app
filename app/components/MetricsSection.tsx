@@ -11,15 +11,13 @@ export default function MetricsSection() {
       className="relative py-14 px-6 border-y border-[#163324] overflow-hidden"
       style={{ background: "#060E08" }}
     >
-      {/* Honeycomb pattern */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 hex-grid" />
-      {/* Green radial glow — fades hex toward center */}
+      {/* Subtle green glow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 60% 140% at 50% 50%, rgba(6,14,8,0.82) 0%, transparent 70%)",
+            "radial-gradient(ellipse 60% 140% at 50% 50%, rgba(0,200,83,0.06) 0%, transparent 70%)",
         }}
       />
       <div className="relative max-w-7xl mx-auto">
