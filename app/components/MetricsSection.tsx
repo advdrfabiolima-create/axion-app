@@ -7,14 +7,17 @@ const metrics = [
 
 export default function MetricsSection() {
   return (
-    <section className="relative py-14 px-6 border-y border-[#1E1E28] overflow-hidden">
-      {/* Subtle glow center */}
+    <section
+      className="relative py-14 px-6 border-y border-[#163324] overflow-hidden"
+      style={{ background: "#060E08" }}
+    >
+      {/* Green radial glow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 50% 120% at 50% 50%, rgba(0,200,83,0.04) 0%, transparent 70%)",
+            "radial-gradient(ellipse 60% 140% at 50% 50%, rgba(0,200,83,0.13) 0%, transparent 70%)",
         }}
       />
       <div className="relative max-w-7xl mx-auto">
@@ -23,10 +26,10 @@ export default function MetricsSection() {
             <div
               key={m.value}
               className={`px-6 py-4 text-center space-y-1.5 ${
-                i < metrics.length - 1 ? "border-r border-[#1E1E28]" : ""
-              } ${i >= 2 ? "border-t border-[#1E1E28] lg:border-t-0" : ""}`}
+                i < metrics.length - 1 ? "border-r border-[#163324]" : ""
+              } ${i >= 2 ? "border-t border-[#163324] lg:border-t-0" : ""}`}
             >
-              <p className="text-3xl lg:text-4xl font-bold text-white tracking-tight">
+              <p className="text-3xl lg:text-4xl font-bold text-[#00C853] tracking-tight">
                 {m.value}
               </p>
               <p className="text-sm font-medium text-[#8A8A93]">{m.label}</p>
