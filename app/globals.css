@@ -44,7 +44,7 @@ body {
 
 /* Honeycomb hex grid background — large pointy-top hexagons (circumradius ~56px) */
 .hex-grid {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='97' height='168'%3E%3Cpolygon points='48.5,0 97,28 97,84 48.5,112 0,84 0,28' fill='none' stroke='rgba(0,200,83,0.13)' stroke-width='1.5'/%3E%3Cpolygon points='0,84 48.5,112 48.5,168 0,196 -48.5,168 -48.5,112' fill='none' stroke='rgba(0,200,83,0.13)' stroke-width='1.5'/%3E%3Cpolygon points='97,84 145.5,112 145.5,168 97,196 48.5,168 48.5,112' fill='none' stroke='rgba(0,200,83,0.13)' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='97' height='168'%3E%3Cpolygon points='48.5,0 97,28 97,84 48.5,112 0,84 0,28' fill='none' stroke='rgba(0,200,83,0.06)' stroke-width='1'/%3E%3Cpolygon points='0,84 48.5,112 48.5,168 0,196 -48.5,168 -48.5,112' fill='none' stroke='rgba(0,200,83,0.06)' stroke-width='1'/%3E%3Cpolygon points='97,84 145.5,112 145.5,168 97,196 48.5,168 48.5,112' fill='none' stroke='rgba(0,200,83,0.06)' stroke-width='1'/%3E%3C/svg%3E");
   background-size: 97px 168px;
 }
 
