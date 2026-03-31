@@ -39,8 +39,20 @@ const trustIndicators = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-32 px-6 bg-[#0B0B0F] border-t border-[#13131A]">
-      <div className="max-w-7xl mx-auto">
+    <section
+      className="relative py-32 px-6 border-t border-[#163324] overflow-hidden"
+      style={{ background: "#060E08" }}
+    >
+      {/* Green radial glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 120% at 50% 20%, rgba(0,200,83,0.08) 0%, transparent 65%)",
+        }}
+      />
+      <div className="relative max-w-7xl mx-auto">
 
         {/* Header */}
         <div className="max-w-3xl mb-20">
@@ -96,7 +108,7 @@ export default function TestimonialsSection() {
 
                 {/* Metric */}
                 <div className="pt-3 border-t border-[#16161E] flex items-baseline gap-2">
-                  <span className="text-xl font-bold text-white tracking-tight">
+                  <span className="text-xl font-bold text-[#00C853] tracking-tight">
                     {c.metric.value}
                   </span>
                   <span className="text-xs text-[#58585F]">{c.metric.label}</span>

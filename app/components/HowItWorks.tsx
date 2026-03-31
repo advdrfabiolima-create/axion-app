@@ -29,8 +29,21 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="como-funciona" className="py-32 px-6 bg-[#0B0B0F] border-t border-[#13131A]">
-      <div className="max-w-7xl mx-auto">
+    <section
+      id="como-funciona"
+      className="relative py-32 px-6 border-t border-[#163324] overflow-hidden"
+      style={{ background: "#060E08" }}
+    >
+      {/* Green radial glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 140% at 50% 30%, rgba(0,200,83,0.08) 0%, transparent 70%)",
+        }}
+      />
+      <div className="relative max-w-7xl mx-auto">
 
         {/* Header */}
         <div className="max-w-3xl mb-24">
@@ -76,7 +89,7 @@ export default function HowItWorks() {
                 </div>
 
                 {/* Dot */}
-                <div className="relative z-10 w-3 h-3 rounded-full bg-[#0B0B0F] border border-[#28283A] flex items-center justify-center group-hover:border-[#00C853]/55 transition-all duration-300">
+                <div className="relative z-10 w-3 h-3 rounded-full bg-[#060E08] border border-[#28283A] flex items-center justify-center group-hover:border-[#00C853]/55 transition-all duration-300">
                   <div className="w-[5px] h-[5px] rounded-full bg-[#32323F] group-hover:bg-[#00C853] transition-all duration-300" />
                   <div
                     aria-hidden="true"
