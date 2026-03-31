@@ -183,9 +183,19 @@ export default function EmpresaPage() {
       {/* Filosofia */}
       <section
         id="filosofia"
-        className="py-28 px-6 bg-[#121217] border-t border-[#1E1E28]"
+        className="relative py-28 px-6 border-t border-[#163324] overflow-hidden"
+        style={{ background: "#060E08" }}
       >
-        <div className="max-w-7xl mx-auto space-y-16">
+        {/* Green radial glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 140% at 50% 40%, rgba(0,200,83,0.09) 0%, transparent 70%)",
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto space-y-16">
           <div className="max-w-2xl space-y-4">
             <p className="text-xs text-[#00C853] uppercase tracking-widest font-medium">
               Filosofia
@@ -199,9 +209,9 @@ export default function EmpresaPage() {
             {filosofiaItems.map((item) => (
               <div
                 key={item.title}
-                className="card-glow bg-[#121217] border border-[#1E1E28] rounded-xl p-8 space-y-4 hover:bg-[#0F0F14] transition-colors duration-200 group"
+                className="card-glow bg-[#0C150E] border border-[#1A2E1F] rounded-xl p-8 space-y-4 hover:bg-[#0F1A11] transition-colors duration-200 group"
               >
-                <div className="w-10 h-10 rounded-lg border border-[#1E1E28] bg-[#0B0B0F] flex items-center justify-center group-hover:border-[#00C853]/20 transition-colors duration-200">
+                <div className="w-10 h-10 rounded-lg border border-[#1A2E1F] bg-[#060E08] flex items-center justify-center group-hover:border-[#00C853]/20 transition-colors duration-200">
                   {item.icon}
                 </div>
                 <h3 className="text-base font-semibold text-white">

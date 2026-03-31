@@ -384,8 +384,20 @@ export default function SolucoesPage() {
       ))}
 
       {/* Como são construídos */}
-      <section className="py-24 px-6 border-t border-[#1E1E28]">
-        <div className="max-w-7xl mx-auto space-y-16">
+      <section
+        className="relative py-24 px-6 border-t border-[#163324] overflow-hidden"
+        style={{ background: "#060E08" }}
+      >
+        {/* Green radial glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 140% at 50% 40%, rgba(0,200,83,0.09) 0%, transparent 70%)",
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto space-y-16">
           <div className="max-w-2xl space-y-4">
             <p className="text-xs text-[#00C853] uppercase tracking-widest font-medium">
               Processo
