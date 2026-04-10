@@ -5,25 +5,25 @@ const steps = [
     number: "01",
     title: "Diagnóstico da operação",
     description:
-      "Mapeamos processos, gargalos e oportunidades com foco em resultado.",
+      "Mapeamos processos, gargalos e oportunidades com foco em resultado operacional real.",
   },
   {
     number: "02",
     title: "Arquitetura do sistema",
     description:
-      "Definimos a estrutura, regras e fluxos que sustentam a operação.",
+      "Definimos a estrutura, regras e fluxos que sustentam e escalam a operação.",
   },
   {
     number: "03",
     title: "Desenvolvimento e validação",
     description:
-      "Construímos o sistema com ciclos curtos e validação contínua.",
+      "Construímos com ciclos curtos, validação contínua e entrega funcional desde o início.",
   },
   {
     number: "04",
     title: "Implantação e evolução",
     description:
-      "Colocamos em produção e evoluímos conforme o uso real.",
+      "Colocamos em produção e evoluímos o sistema conforme o uso e a operação real.",
   },
 ];
 
@@ -31,12 +31,12 @@ export default function HowItWorks() {
   return (
     <section
       id="como-funciona"
-      className="relative py-32 px-6 border-t border-[#163324] overflow-hidden"
+      className="relative py-28 px-6 border-t border-[#163324] overflow-hidden"
       style={{ background: "#060E08" }}
     >
       {/* Honeycomb pattern */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 hex-grid" />
-      {/* Dark fade — dims hex toward center */}
+      {/* Dark fade */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -49,17 +49,17 @@ export default function HowItWorks() {
 
         {/* Header */}
         <div className="max-w-3xl mb-24">
-          <p className="text-xs font-medium tracking-[0.2em] uppercase text-[#00C853] mb-5">
+          <p className="text-sm font-medium tracking-[0.2em] uppercase text-[#00C853] mb-5">
             Como funciona
           </p>
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-6">
+          <h2 className="text-4xl lg:text-5xl xl:text-[3.25rem] font-bold text-white leading-[1.08] tracking-tight mb-6">
             Da análise à operação,{" "}
             <br className="hidden sm:block" />
             com método e clareza
           </h2>
-          <p className="text-lg text-white/65 leading-relaxed max-w-2xl">
-            Cada sistema é desenvolvido com base na realidade da operação, com etapas
-            bem definidas, validação contínua e foco em entrega funcional.
+          <p className="text-lg text-white/70 leading-relaxed max-w-2xl">
+            Cada sistema é desenvolvido com base na realidade da operação — etapas bem definidas,
+            validação contínua e foco em entrega funcional, não em complexidade.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export default function HowItWorks() {
         <div className="hidden lg:block">
           <div className="relative grid grid-cols-4">
 
-            {/* Connector line: runs from center of col-1 dot to center of col-4 dot */}
+            {/* Connector line */}
             <div
               aria-hidden="true"
               className="absolute left-[12.5%] right-[12.5%] h-px pointer-events-none"
@@ -83,9 +83,9 @@ export default function HowItWorks() {
                 key={step.number}
                 className="group flex flex-col items-center text-center px-8"
               >
-                {/* Number — fixed height so line top is predictable */}
+                {/* Number */}
                 <div className="h-7 flex items-center justify-center mb-3">
-                  <span className="text-[10px] font-mono tracking-[0.3em] text-[#28283A] group-hover:text-[#00C853]/45 transition-colors duration-300">
+                  <span className="text-xs font-mono tracking-[0.3em] text-[#28283A] group-hover:text-[#00C853]/50 transition-colors duration-300">
                     {step.number}
                   </span>
                 </div>
@@ -102,10 +102,10 @@ export default function HowItWorks() {
 
                 {/* Text */}
                 <div className="mt-9 space-y-3">
-                  <h3 className="text-sm font-semibold text-white/85 leading-snug group-hover:text-white transition-colors duration-300">
+                  <h3 className="text-base font-semibold text-white leading-snug group-hover:text-white transition-colors duration-300">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-[#6A6A75] leading-relaxed group-hover:text-[#7A7A85] transition-colors duration-300">
+                  <p className="text-base text-[#7A7A88] leading-relaxed group-hover:text-[#8A8A98] transition-colors duration-300">
                     {step.description}
                   </p>
                 </div>
@@ -121,8 +121,8 @@ export default function HowItWorks() {
 
               {/* Left track */}
               <div className="flex flex-col items-center">
-                <div className="relative z-10 w-8 h-8 rounded-full border border-[#1E1E28] bg-[#0D0D12] flex items-center justify-center shrink-0 group-hover:border-[#00C853]/30 transition-colors duration-300">
-                  <span className="text-[10px] font-mono text-[#30303D] group-hover:text-[#00C853]/50 transition-colors duration-300">
+                <div className="relative z-10 w-9 h-9 rounded-full border border-[#1E1E28] bg-[#0D0D12] flex items-center justify-center shrink-0 group-hover:border-[#00C853]/30 transition-colors duration-300">
+                  <span className="text-xs font-mono text-[#30303D] group-hover:text-[#00C853]/60 transition-colors duration-300">
                     {step.number}
                   </span>
                 </div>
@@ -139,11 +139,11 @@ export default function HowItWorks() {
               </div>
 
               {/* Content */}
-              <div className="pt-1.5 pb-10 space-y-2">
-                <h3 className="text-base font-semibold text-white/90 leading-snug">
+              <div className="pt-1.5 pb-10 space-y-2.5">
+                <h3 className="text-lg font-semibold text-white leading-snug">
                   {step.title}
                 </h3>
-                <p className="text-sm text-[#6A6A75] leading-relaxed max-w-sm">
+                <p className="text-base text-[#7A7A88] leading-relaxed max-w-sm">
                   {step.description}
                 </p>
               </div>
@@ -151,8 +151,8 @@ export default function HowItWorks() {
           ))}
         </div>
 
-        {/* Reassurance line */}
-        <p className="mt-20 text-xs text-[#42424E] text-center tracking-wide max-w-md mx-auto">
+        {/* Reassurance */}
+        <p className="mt-16 text-sm text-[#5A5A68] text-center tracking-wide max-w-md mx-auto">
           Processo estruturado, com foco em entrega real — não em complexidade.
         </p>
 

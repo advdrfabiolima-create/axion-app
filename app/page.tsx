@@ -4,7 +4,9 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import TrustSection from "./components/TrustSection";
 import MetricsSection from "./components/MetricsSection";
+import PainTransformation from "./components/PainTransformation";
 import ValueProposition from "./components/ValueProposition";
+import Features from "./components/Features";
 import HowItWorks from "./components/HowItWorks";
 import TechShowcase from "./components/TechShowcase";
 import ProductVisual from "./components/ProductVisual";
@@ -14,28 +16,30 @@ import FinalCTA from "./components/FinalCTA";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "Axion Systems | Sistemas inteligentes para negócios que exigem precisão",
+  title: "Axion Systems | Sistemas sob medida para operações que não podem falhar",
   description:
-    "Projetamos sistemas que automatizam operações, conectam dados e eliminam complexidade — com precisão, performance e lógica de produto.",
+    "Desenvolvemos sistemas que automatizam operações, eliminam retrabalho e escalam com o seu negócio — com arquitetura pensada como produto, não como projeto.",
 };
 
 export default function Home() {
   return (
     <BrandIntroWrapper>
-    <main className="bg-[#0B0B0F] min-h-screen">
-      <Header />
-      <Hero />
-      <TrustSection />
-      <MetricsSection />
-      <ValueProposition />
-      <HowItWorks />
-      <TechShowcase />
-      <ProductVisual />
-      <TestimonialsSection />
-      <Differentiation />
-      <FinalCTA />
-      <Footer />
-    </main>
+      <main className="bg-[#0B0B0F] min-h-screen">
+        <Header />
+        <Hero />
+        <TrustSection />
+        <MetricsSection />
+        <PainTransformation />
+        <ValueProposition />
+        <Features />
+        <HowItWorks />
+        <TechShowcase />
+        <ProductVisual />
+        <TestimonialsSection />
+        <Differentiation />
+        <FinalCTA />
+        <Footer />
+      </main>
     </BrandIntroWrapper>
   );
 }

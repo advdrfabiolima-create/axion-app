@@ -1,5 +1,5 @@
 const metrics = [
-  { value: "50+", label: "Sistemas entregues", sub: "em produção" },
+  { value: "50+", label: "Sistemas entregues", sub: "em produção real" },
   { value: "R$ 2M+", label: "Em operações", sub: "automatizadas pelos nossos sistemas" },
   { value: "99.9%", label: "Uptime médio", sub: "nos últimos 12 meses" },
   { value: "< 48h", label: "Ativação", sub: "do sistema em produção" },
@@ -8,7 +8,7 @@ const metrics = [
 export default function MetricsSection() {
   return (
     <section
-      className="relative py-14 px-6 border-y border-[#163324] overflow-hidden"
+      className="relative py-16 px-6 border-y border-[#163324] overflow-hidden"
       style={{ background: "#060E08" }}
     >
       {/* Subtle green glow */}
@@ -25,15 +25,15 @@ export default function MetricsSection() {
           {metrics.map((m, i) => (
             <div
               key={m.value}
-              className={`px-6 py-4 text-center space-y-1.5 ${
+              className={`px-8 py-6 text-center space-y-2 ${
                 i < metrics.length - 1 ? "border-r border-[#163324]" : ""
               } ${i >= 2 ? "border-t border-[#163324] lg:border-t-0" : ""}`}
             >
-              <p className="text-3xl lg:text-4xl font-bold text-[#00C853] tracking-tight">
+              <p className="text-[2.2rem] lg:text-[2.5rem] font-bold text-[#00C853] tracking-tight leading-none">
                 {m.value}
               </p>
-              <p className="text-sm font-medium text-[#8A8A93]">{m.label}</p>
-              <p className="text-xs text-[#6B6B78] leading-snug">{m.sub}</p>
+              <p className="text-base font-semibold text-white/90">{m.label}</p>
+              <p className="text-sm text-[#7A7A88] leading-snug">{m.sub}</p>
             </div>
           ))}
         </div>
