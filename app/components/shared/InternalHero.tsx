@@ -12,35 +12,43 @@ export default function InternalHero({
   subtitle,
 }: InternalHeroProps) {
   return (
-    <section className="relative pt-32 pb-20 px-6 dot-grid overflow-hidden">
+    <section className="relative pt-36 pb-24 px-6 dot-grid overflow-hidden">
 
-      {/* Radial glow — same treatment as home hero */}
+      {/* Green ambient glow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 60% 80% at 20% 60%, rgba(0,200,83,0.06) 0%, transparent 70%)",
+            "radial-gradient(ellipse 55% 80% at 15% 60%, rgba(0,200,83,0.06) 0%, transparent 70%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 40% 60% at 85% 30%, rgba(0,200,83,0.03) 0%, transparent 70%)",
         }}
       />
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="max-w-3xl space-y-6">
+        <div className="max-w-3xl space-y-7">
           <div className="h-px w-12 bg-[#1E1E28]" />
 
           {eyebrow && (
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-full border border-[#1E1E28] bg-[#121217]/80 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#1E1E2C] bg-[#121217]/85 backdrop-blur-sm">
               <span className="relative flex w-2 h-2">
                 <span className="animate-badge-pulse absolute inline-flex w-full h-full rounded-full bg-[#00C853] opacity-60" />
                 <span className="relative inline-flex w-2 h-2 rounded-full bg-[#00C853]" />
               </span>
-              <span className="text-xs text-[#8A8A93] tracking-wide">
+              <span className="text-sm text-[#9A9AA8] tracking-wide">
                 {eyebrow}
               </span>
             </div>
           )}
 
-          <h1 className="text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight">
+          <h1 className="text-[2.6rem] lg:text-5xl xl:text-[3.25rem] font-bold leading-[1.06] tracking-tight">
             <span className="text-white">{title}</span>
             {titleMuted && (
               <span className="text-gradient"> {titleMuted}</span>
@@ -48,7 +56,7 @@ export default function InternalHero({
           </h1>
 
           {subtitle && (
-            <p className="text-lg text-[#8A8A93] leading-relaxed max-w-2xl">
+            <p className="text-xl text-white/70 leading-relaxed max-w-2xl">
               {subtitle}
             </p>
           )}
@@ -58,10 +66,8 @@ export default function InternalHero({
       {/* Bottom fade */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-0 right-0 h-16"
-        style={{
-          background: "linear-gradient(to bottom, transparent, #0B0B0F)",
-        }}
+        className="pointer-events-none absolute bottom-0 left-0 right-0 h-20"
+        style={{ background: "linear-gradient(to bottom, transparent, #0B0B0F)" }}
       />
     </section>
   );
