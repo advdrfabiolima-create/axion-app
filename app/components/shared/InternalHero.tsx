@@ -1,8 +1,13 @@
+import type { StaticImageData } from "next/image";
+import type { ReactNode } from "react";
+import InternalHeroBackground from "./InternalHeroBackground";
+
 interface InternalHeroProps {
   eyebrow?: string;
-  title: string;
+  title: ReactNode;
   titleMuted?: string;
   subtitle?: string;
+  backgroundImage?: StaticImageData;
 }
 
 export default function InternalHero({
@@ -10,9 +15,25 @@ export default function InternalHero({
   title,
   titleMuted,
   subtitle,
+  backgroundImage,
 }: InternalHeroProps) {
   return (
     <section className="relative pt-36 pb-24 px-6 dot-grid overflow-hidden">
+      {backgroundImage && (
+        <InternalHeroBackground imageUrl={backgroundImage.src} />
+      )}
+      {backgroundImage && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,#05080D_0%,#05080D_45%,rgba(5,8,13,0.9)_55%,rgba(5,8,13,0.65)_75%,rgba(5,8,13,0.35)_100%)]"
+        />
+      )}
+      {backgroundImage && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_82%_42%,rgba(0,200,83,0.11)_0%,transparent_34%)]"
+        />
+      )}
 
       {/* Green ambient glow */}
       <div

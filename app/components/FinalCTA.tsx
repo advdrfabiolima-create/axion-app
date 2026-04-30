@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import ctaImage from "../../imagens/cta.png";
 
 const faqs = [
   {
@@ -35,13 +37,29 @@ export default function FinalCTA() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-28 px-6 border-t border-[#13131A]">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative overflow-hidden border-t border-[#13131A] px-6 py-28">
+      <Image
+        src={ctaImage}
+        alt=""
+        fill
+        className="absolute inset-0 object-contain object-right opacity-90 brightness-110 saturate-125"
+        sizes="100vw"
+        aria-hidden="true"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,#070A0F_0%,#070A0F_35%,rgba(7,10,15,0.86)_56%,rgba(7,10,15,0.58)_76%,rgba(7,10,15,0.26)_100%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_82%_44%,rgba(0,230,118,0.16)_0%,rgba(0,200,83,0.08)_28%,transparent_48%),radial-gradient(ellipse_at_42%_34%,rgba(0,200,83,0.08)_0%,transparent_42%),radial-gradient(ellipse_at_center,transparent_48%,rgba(0,0,0,0.36)_100%)]"
+      />
+      <div className="relative z-10 max-w-7xl mx-auto">
 
         {/* ── CTA Block ──────────────────────────────────────────────── */}
         <div className="max-w-3xl mx-auto">
           <div
-            className="relative rounded-2xl border border-[#1E1E2C] bg-[#0D0D12] px-8 py-16 sm:px-14 text-center overflow-hidden"
+            className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[rgba(8,12,18,0.72)] px-8 py-16 text-center shadow-[0_24px_90px_rgba(0,0,0,0.36)] backdrop-blur-[10px] sm:px-14"
           >
             {/* Top glow */}
             <div
@@ -49,7 +67,7 @@ export default function FinalCTA() {
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0,200,83,0.07) 0%, transparent 70%)",
+                  "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0,230,118,0.13) 0%, rgba(0,200,83,0.06) 36%, transparent 72%)",
               }}
             />
 
@@ -65,7 +83,7 @@ export default function FinalCTA() {
                 Pronto para estruturar sua operação?
               </h2>
               <p className="text-xl text-white/70 leading-relaxed max-w-xl mx-auto">
-                Converse com a equipe da Axion e entenda como podemos desenvolver
+                Converse com a equipe da <span className="text-[#00C853]">Axion</span> e entenda como podemos desenvolver
                 um sistema alinhado à sua realidade operacional.
               </p>
             </div>
@@ -73,10 +91,16 @@ export default function FinalCTA() {
             <div className="relative flex flex-wrap gap-3 justify-center mb-8">
               <Link
                 href="/contato"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#00C853] text-black font-semibold text-[15px] rounded hover:bg-[#00B84A] transition-all duration-200 shadow-[0_0_24px_rgba(0,200,83,0.25)] hover:shadow-[0_0_44px_rgba(0,200,83,0.45)]"
+                className="cta-primary-button group inline-flex items-center gap-2 rounded bg-[#00C853] px-8 py-4 text-[15px] font-semibold text-black shadow-[0_0_26px_rgba(0,200,83,0.28)] transition-all duration-[250ms] ease-out hover:-translate-y-0.5 hover:bg-[#00D95B] hover:shadow-[0_0_46px_rgba(0,230,118,0.5)]"
               >
                 Solicitar diagnóstico gratuito
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  className="transition-transform duration-[250ms] ease-out group-hover:translate-x-[3px]"
+                >
                   <path
                     d="M2 7h10M8 3l4 4-4 4"
                     stroke="currentColor"
@@ -88,7 +112,7 @@ export default function FinalCTA() {
               </Link>
               <Link
                 href="/contato"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-[#2A2A38] text-white/80 font-medium text-[15px] rounded hover:border-[#3A3A48] hover:text-white hover:bg-white/[0.04] transition-all duration-200"
+                className="inline-flex items-center gap-2 rounded border border-[#2A2A38] px-8 py-4 text-[15px] font-medium text-white/80 transition-all duration-[250ms] ease-out hover:border-[#00C853]/35 hover:bg-[#00C853]/[0.055] hover:text-white"
               >
                 Falar com especialista
               </Link>

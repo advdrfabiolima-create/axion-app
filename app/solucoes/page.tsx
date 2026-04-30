@@ -4,6 +4,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import InternalHero from "../components/shared/InternalHero";
 import CTASection from "../components/shared/CTASection";
+import heroSolucoesImage from "../../imagens/hero_solucoes.png";
+import bloco01SolucoesImage from "../../imagens/bloco_01_solucoes.png";
 
 export const metadata: Metadata = {
   title: "Axion Systems | Soluções",
@@ -17,7 +19,8 @@ const solucoes = [
   {
     eyebrow: "01",
     title: "Sistemas desenhados para o seu fluxo",
-    titleMuted: "— não adaptados depois",
+    titleMuted: "—",
+    titleAccent: "não adaptados depois",
     insight:
       "A estrutura do sistema nasce da operação, não de um template.",
     desc: "Cada plataforma que construímos começa pelo entendimento do fluxo real — não pela escolha de uma ferramenta. O resultado é um sistema que encaixa na operação, cresce com ela e não exige gambiarras para funcionar no mundo real.",
@@ -33,45 +36,9 @@ const solucoes = [
       "Sistemas de workflow e aprovação",
       "Aplicações corporativas sob medida",
     ],
-    visual: (
-      <div className="w-full h-full flex flex-col gap-4">
-        <div className="grid grid-cols-3 gap-3">
-          {[
-            { label: "Módulo A", active: true },
-            { label: "Módulo B", active: true },
-            { label: "Módulo C", active: false },
-          ].map((m) => (
-            <div
-              key={m.label}
-              className={`rounded-lg border p-3 flex flex-col gap-2.5 ${
-                m.active
-                  ? "border-[#00C853]/30 bg-[#00C853]/5"
-                  : "border-[#1E1E28] bg-[#0B0B0F]"
-              }`}
-            >
-              <div className={`w-2 h-2 rounded-full ${m.active ? "bg-[#00C853]" : "bg-[#2E2E38]"}`} />
-              <p className={`text-xs font-medium ${m.active ? "text-[#00C853]" : "text-[#4A4A58]"}`}>
-                {m.label}
-              </p>
-            </div>
-          ))}
-        </div>
-        <div className="flex-1 rounded-lg border border-[#1E1E28] bg-[#0B0B0F] p-5 space-y-4">
-          <p className="text-xs text-[#5A5A6A] uppercase tracking-widest font-medium">
-            Fluxo operacional
-          </p>
-          {["Entrada de dados", "Processamento", "Saída estruturada"].map((step, i) => (
-            <div key={step} className="flex items-center gap-3">
-              <span className="text-xs text-[#3A3A4A] font-mono w-5 shrink-0">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div className="flex-1 h-px bg-[#1E1E28]" />
-              <span className="text-xs text-[#8A8A98]">{step}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    ),
+    backgroundClass:
+      "relative overflow-hidden bg-cover bg-[position:center_right] lg:bg-[position:right_center]",
+    backgroundImage: `linear-gradient(90deg,#070A0F 0%,rgba(7,10,15,0.96) 34%,rgba(7,10,15,0.78) 58%,rgba(7,10,15,0.35) 100%),url(${bloco01SolucoesImage.src})`,
   },
   {
     eyebrow: "02",
@@ -321,8 +288,14 @@ export default function SolucoesPage() {
 
       <InternalHero
         eyebrow="Soluções"
-        title="Sistemas construídos para operar com precisão"
+        title={
+          <>
+            Sistemas construídos para operar com{" "}
+            <span className="text-[#00C853]">precisão</span>
+          </>
+        }
         subtitle="Cada sistema que a Axion constrói resolve um problema operacional real — com arquitetura clara, automação inteligente e lógica de produto pensada para escalar."
+        backgroundImage={heroSolucoesImage}
       />
 
       {/* ── Solution blocks ──────────────────────────────────────────────── */}
@@ -330,12 +303,23 @@ export default function SolucoesPage() {
         <section
           key={solucao.eyebrow}
           className={`py-24 px-6 border-t border-[#1E1E28] ${
-            index % 2 !== 0 ? "bg-[#0E0E14]" : ""
+            "backgroundClass" in solucao && solucao.backgroundClass
+              ? solucao.backgroundClass
+              : index % 2 !== 0
+              ? "bg-[#0E0E14]"
+              : ""
           }`}
+          style={
+            "backgroundImage" in solucao && solucao.backgroundImage
+              ? { backgroundImage: solucao.backgroundImage }
+              : undefined
+          }
         >
           <div className="max-w-7xl mx-auto">
             <div
-              className={`grid lg:grid-cols-2 gap-20 items-center ${
+              className={`grid ${
+                "visual" in solucao && solucao.visual ? "lg:grid-cols-2" : "lg:grid-cols-[minmax(0,0.58fr)_minmax(0,0.42fr)]"
+              } gap-20 items-center ${
                 index % 2 !== 0 ? "lg:[&>*:first-child]:order-2" : ""
               }`}
             >
@@ -349,6 +333,9 @@ export default function SolucoesPage() {
                     {solucao.title}
                     {solucao.titleMuted && (
                       <span className="text-[#7A7A8A]"> {solucao.titleMuted}</span>
+                    )}
+                    {"titleAccent" in solucao && solucao.titleAccent && (
+                      <span className="text-[#00C853]"> {solucao.titleAccent}</span>
                     )}
                   </h2>
                   <div className="border-l-2 border-[#00C853]/40 pl-5 py-1">
@@ -387,12 +374,13 @@ export default function SolucoesPage() {
                 </div>
               </div>
 
-              {/* Visual side */}
-              <div className={index % 2 !== 0 ? "lg:order-1" : ""}>
-                <div className="rounded-2xl border border-[#1E1E28] bg-[#0F0F14] p-8 min-h-[320px] flex flex-col justify-center shadow-[0_0_48px_rgba(0,200,83,0.06),0_0_96px_rgba(0,200,83,0.03)] hover:shadow-[0_0_64px_rgba(0,200,83,0.1),0_0_128px_rgba(0,200,83,0.05)] hover:border-[#00C853]/18 transition-all duration-500">
-                  {solucao.visual}
+              {"visual" in solucao && solucao.visual && (
+                <div className={index % 2 !== 0 ? "lg:order-1" : ""}>
+                  <div className="rounded-2xl border border-[#1E1E28] bg-[#0F0F14] p-8 min-h-[320px] flex flex-col justify-center shadow-[0_0_48px_rgba(0,200,83,0.06),0_0_96px_rgba(0,200,83,0.03)] hover:shadow-[0_0_64px_rgba(0,200,83,0.1),0_0_128px_rgba(0,200,83,0.05)] hover:border-[#00C853]/18 transition-all duration-500">
+                    {solucao.visual}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </section>
